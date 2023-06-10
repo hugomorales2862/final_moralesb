@@ -2,13 +2,13 @@
 require_once __DIR__ . '/Conexion.php';
 
 class Grado extends Conexion{
-    public $ID;
+    public $gra_id;
     public $gra_descripcion;
     public $gra_situacion;
 
     public function __construct($args = [] )
     {
-        $this-> ID = $args ['ID'] ?? NULL;
+        $this-> gra_id = $args ['gra_id'] ?? NULL;
         $this-> gra_descripcion = $args  ['gra_descripcion'] ?? ' '; 
     }
 
@@ -30,13 +30,13 @@ class Grado extends Conexion{
     }
 
     public function modificar (){
-        $sql = "UPDATE grados SET gra_descripcion = '$this->gra_descripcion' where ID = $this->ID ";
+        $sql = "UPDATE grados SET gra_descripcion = '$this->gra_descripcion' where gra_id = $this->gra_id ";
         $resultado = self::ejecutar($sql);
         return $resultado;    
     }
 
     public function eliminar(){
-        $sql = "UPDATE grados SET gra_situacion = 0 where ID = $this->ID";
+        $sql = "UPDATE grados SET gra_situacion = 0 where gra_id = $this->gra_id";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
