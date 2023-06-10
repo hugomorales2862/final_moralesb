@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-require '../../../final_moralesb/modelos/Grado.php';
+require '../../modelos/Grado.php.';
 
 
 if($_POST['gra_descripcion'] != ''){
