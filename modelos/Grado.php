@@ -1,5 +1,6 @@
 <?php
-require_once 'Conexion.php';
+require_once __DIR__ . '/Conexion.php';
+
 class Grado extends Conexion{
     public $ID;
     public $gra_descripcion;
