@@ -1,6 +1,6 @@
 -- Creación de la tabla "Alumnos"
 CREATE TABLE alumnos (
-  ID SERIAL PRIMARY KEY,
+  alu_id  SERIAL PRIMARY KEY,
   alu_nombre VARCHAR(50) NOT NULL,
   alu_apellido VARCHAR (50) NOT NULL,
   alu_grado INT NOT NULL,
@@ -13,39 +13,43 @@ CREATE TABLE alumnos (
 
 -- Creación de la tabla "Materias"
 CREATE TABLE materias (
-  ID SERIAL PRIMARY KEY,
+  mat_id SERIAL PRIMARY KEY,
   mat_nombre VARCHAR(50) NOT NULL,
   mat_situacion CHAR(1) DEFAULT '1';
 );
 
 -- tabla de nacionalidades 
 CREATE TABLE nacionalidades(
-    ID SERIAL PRIMARY KEY,
+    mat_id SERIAL PRIMARY KEY,
     nac_pais VARCHAR (50) NOT NULL,
     nac_situacion CHAR(1) DEFAULT '1';
     )
 -- tabla de grados 
 CREATE TABLE grados(
-    ID SERIAL PRIMARY KEY,
+    mat_id SERIAL PRIMARY KEY,
     gra_descripcion VARCHAR (50) NOT NULL,
     gra_situacion CHAR(1) DEFAULT '1';
 )
 
 -- tabla de armas
 CREATE TABLE armas (
-    ID SERIAL PRIMARY KEY,
+    arma_id SERIAL PRIMARY KEY,
     arm_descripcion VARCHAR (50) NOT NULL,
     arm_situacion CHAR(1) DEFAULT '1';
 ); 
 
 -- Creación de la tabla "Calificaciones"
+CREATE TABLE asig_materia (
+  asig_alumno INT,
+  asig_materia INT,
+  PRIMARY KEY (asig_alumno,asig_materia)
+  FOREIGN KEY (alumno_id) REFERENCES alumnos(id),
+  FOREIGN KEY (materia_id) REFERENCES materias(id)
+);
+
 CREATE TABLE calificaciones (
-  ID SERIAL PRIMARY KEY,
-  calif_alumno  INT NOT NULL,
-  calif_materia INT NOT NULL,
-  calif_punteo FLOAT NOT NULL,
-  calif_resultado VARCHAR(10) NOT NULL,
-  calif_situacion CHAR(1) DEFAULT '1';
-  FOREIGN KEY (calif_alumno) REFERENCES alumnos(ID),
-  FOREIGN KEY (calif_materia) REFERENCES materias(ID)
- )
+  calif_id SERIAL PRIMARY KEY,
+  calif_descripcion INT,
+  calificacion INT,
+  FOREIGN KEY (calif_descripcion) REFERENCES asig_materia(asig_alumno, asig_materia)
+);
