@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once __DIR__ . '../../../modelos/Grado.php';
+require_once __DIR__ . '../../../modelos/Arma.php';
 
 
     try {
@@ -54,7 +54,7 @@ require_once __DIR__ . '../../../modelos/Grado.php';
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/crud_practica9/controladores/clientes/buscar.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/controladores/armas/buscar.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
