@@ -5,18 +5,18 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once __DIR__ . '../../../modelos/Grado.php';
+
 try {
-    $grado = new Grado($_POST);
-    $grado = $grado->guardar();
-    // $error = "NO se guardó correctamente";
+    $grado = new Grado($_GET);
+    $resultado = $grado->buscar();
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2) {
     $error = $e2->getMessage();
 }
 
-
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -40,18 +40,18 @@ try {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(count($grados) > 0):?>
-                        <?php foreach($grados as $key => $grado) : ?>
-                        <tr>
-                            <td><?= $key + 1 ?></td>
-                            <td><?= $grado['gra_descripcion'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/crud_practica9/vistas/clientes/modificar.php?gra_id=<?= $grado['gra_id']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/crud_practica9/controladores/clientes/eliminar.php?gra_id=<?= $grado['gra_id']?>">Eliminar</a></td>
-                        </tr>
-                        <?php endforeach ?>
+                        <?php if(count($resultado) > 0):?>
+                            <?php foreach($resultado as $key => $grado) : ?>
+                                <tr>
+                                    <td><?= $key + 1 ?></td>
+                                    <td><?= $grado['gra_descripcion'] ?></td>
+                                    <td><a class="btn btn-warning w-100" href="/crud_practica9/vistas/clientes/modificar.php?gra_id=<?= $grado['gra_id']?>">Modificar</a></td>
+                                    <td><a class="btn btn-danger w-100" href="/crud_practica9/controladores/clientes/eliminar.php?gra_id=<?= $grado['gra_id']?>">Eliminar</a></td>
+                                </tr>
+                            <?php endforeach ?>
                         <?php else :?>
                             <tr>
-                                <td colspan="3">NO EXISTEN REGISTROS</td>
+                                <td colspan="4">NO EXISTEN REGISTROS</td>
                             </tr>
                         <?php endif?>
                     </tbody>
