@@ -28,10 +28,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/crud_practica9/vistas/productos/index.php">Registrar pais</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/nacionalidades/index.php">Registrar pais</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/crud_practica9/vistas/productos/buscar.php">Buscar pais</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/nacionalidades/buscar.php">Buscar pais</a>
                         </li>
                     </ul>
                 </li>
@@ -41,13 +41,13 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/crud_practica9/vistas/productos/index.php">Registrar materias</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/materias/index.php">Registrar materias</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/crud_practica9/vistas/productos/buscar.php">Asignar alumno</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/crud_practica9/vistas/productos/buscar.php">Buscar materia</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/materias/buscar.php">Buscar materia</a>
                         </li>
                     </ul>
                 </li>
@@ -57,10 +57,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/crud_practica9/vistas/productos/index.php">Registro Arma/servicio</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/armas/index.php">Registro Arma/servicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/crud_practica9/vistas/productos/buscar.php">Buscar Arma/servicio</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/armas/buscar.php">Buscar Arma/servicio</a>
                         </li>
                     </ul>
                 </li>
