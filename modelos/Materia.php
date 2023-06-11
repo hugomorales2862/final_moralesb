@@ -1,13 +1,13 @@
 <?php
 require_once 'Conexion.php';
 class Materia extends Conexion{
-    public $ID;
+    public $mat_id;
     public $mat_nombre;
     public $mat_situacion;
 
     public function __construct($args = [] )
     {
-        $this-> ID = $args ['ID'] ?? NULL;
+        $this-> mat_id = $args ['mat_id'] ?? NULL;
         $this-> mat_nombre = $args  ['mat_nombre'] ?? ' '; 
     }
 
@@ -29,13 +29,13 @@ class Materia extends Conexion{
     }
 
     public function modificar (){
-        $sql = "UPDATE materias SET mat_nombre = '$this->mat_nombre' where ID = $this->ID ";
+        $sql = "UPDATE materias SET mat_nombre = '$this->mat_nombre' where mat_id = $this->mat_id ";
         $resultado = self::ejecutar($sql);
         return $resultado;    
     }
 
     public function eliminar(){
-        $sql = "UPDATE materias SET mat_situacion = 0 where ID = $this->ID";
+        $sql = "UPDATE materias SET mat_situacion = 0 where mat_id = $this->mat_id";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
