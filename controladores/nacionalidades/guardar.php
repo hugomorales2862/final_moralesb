@@ -4,15 +4,15 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once __DIR__ . '../../../modelos/Materia.php';
+require_once __DIR__ . '../../../modelos/Nacionalidad.php';
 
 $resultado = false;
 
-if (isset($_POST['mat_nombre']) && $_POST['mat_nombre'] != '') {
+if (isset($_POST['nac_pais']) && $_POST['nac_pais'] != '') {
 
     try {
-        $materia = new  Materia($_POST);
-        $resultado = $materia->guardar();
+        $nacionalidad = new  Nacionalidad($_POST);
+        $resultado = $nacionalidad->guardar();
         $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -53,7 +53,7 @@ if (isset($_POST['mat_nombre']) && $_POST['mat_nombre'] != '') {
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/vistas/materias/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/vistas/nacionalidades/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
