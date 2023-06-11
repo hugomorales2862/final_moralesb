@@ -4,15 +4,15 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once __DIR__ . '../../../modelos/Grado.php';
+require_once __DIR__ . '../../../modelos/Materia.php';
 
 $resultado = false;
 
-if (isset($_POST['gra_descripcion']) && $_POST['gra_descripcion'] != '') {
+if (isset($_POST['mat_nombre']) && $_POST['mat_nombre'] != '') {
 
     try {
-        $grado = new Grado($_POST);
-        $resultado = $grado->guardar();
+        $materia = new  Materia($_POST);
+        $resultado = $materia->guardar();
         $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -53,7 +53,7 @@ if (isset($_POST['gra_descripcion']) && $_POST['gra_descripcion'] != '') {
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/vistas/grados/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/vistas/materias/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
