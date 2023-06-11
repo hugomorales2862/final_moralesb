@@ -6,7 +6,7 @@
             <form action="../../controladores/nacionalidades/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="nac_pais">Pais</label>
+                        <label for="nac_pais">Nacionalidad</label>
                         <input type="text" name="nac_pais" id="nac_pais" class="form-control" required>
                     </div>
                 </div>
