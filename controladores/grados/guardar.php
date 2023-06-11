@@ -53,7 +53,7 @@ if (isset($_POST['gra_descripcion']) && $_POST['gra_descripcion'] != '') {
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/crud_practica9/vistas/clientes/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/vistas/grados/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
