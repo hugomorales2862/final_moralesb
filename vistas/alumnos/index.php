@@ -35,13 +35,13 @@ require_once __DIR__.'/../../modelos/Alumno.php';
             <div class="row mb-3">
                 <div class="col">
                     <label for="alu_nombre">Nombre</label>
-                    <input type="text" name="alu_nombre" id="alu_nombre" class="form-control">
+                    <input type="text" name="alu_nombre" id="alu_nombre" class="form-control required">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col">
                     <label for="alu_apellido">Apellido</label>
-                    <input type="text" name="alu_apellido" id="alu_apellido" class="form-control">
+                    <input type="text" name="alu_apellido" id="alu_apellido" class="form-control required">
                 </div>
             </div>
                 <div class="row mb-3">
