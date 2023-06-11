@@ -4,9 +4,9 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require __DIR__.'/../../modelos/Arma.php';
     try {
-        $grado = new Grado($_GET);
+        $arma = new Arma($_GET);
 
-        $resultado = $grado->buscar();
+        $resultado = $arma->buscar();
        
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -19,11 +19,11 @@ require __DIR__.'/../../modelos/Arma.php';
         <h1 class="text-center">Modificar Arma/Servicio</h1>
         <div class="row justify-content-center">
             <form action="../../controladores/armas/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
-                <input type="hidden" name="gra_id">
+                <input type="hidden" name="arm_id">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="gra_descripcion">Arma/Servicio a modificar</label>
-                        <input type="text" name="gra_descripcion" id="gra_descripcion" class="form-control" required>
+                        <label for="arm_descripcion">Arma/Servicio a modificar</label>
+                        <input type="text" name="arm_descripcion" id="arm_descripcion" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">

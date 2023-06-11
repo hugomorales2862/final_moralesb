@@ -8,9 +8,9 @@ require_once __DIR__ . '../../../modelos/Arma.php';
 
 
     try {
-        $grado = new Grado($_GET);
+        $arma = new Arma($_GET);
  
-        $resultado = $grado->eliminar();
+        $resultado = $arma->eliminar();
 
     } catch (PDOException $e) {
         $error = $e->getMessage();

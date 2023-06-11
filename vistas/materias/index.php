@@ -11,8 +11,8 @@ error_reporting(E_ALL);
         <form action="../../controladores/materias/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
                 <div class="col">
-                    <label for="mat_materias">Materia del curso</label>
-                    <input type="text" name="mat_materias" id="mat_materias" class="form-control">
+                    <label for="mat_nombre">Materia del curso</label>
+                    <input type="text" name="mat_nombre" id="mat_nombre" class="form-control">
                 </div>
             </div>
 
