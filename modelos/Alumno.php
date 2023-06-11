@@ -81,8 +81,8 @@ public function eliminar() {
         return false;
     }
 }
-
 public function modificar() {
+    // Modificar registro en la tabla alumnos
     $sql = "UPDATE alumnos 
             SET alu_nombre = '$this->alu_nombre', 
                 alu_apellido = '$this->alu_apellido', 
@@ -100,13 +100,21 @@ public function modificar() {
 
     $resultado_asig_materia = self::ejecutar($sql);
 
-    // Comprobar si ambas operaciones se realizaron correctamente
-    if ($resultado && $resultado_asig_materia) {
+    // Modificar registros correspondientes en la tabla calificaciones
+    $sql = "UPDATE calificaciones 
+            SET calif_resultado = 'Aprobado' 
+            WHERE calif_alumno = $this->alu_id";
+
+    $resultado_calificaciones = self::ejecutar($sql);
+
+    // Comprobar si todas las operaciones se realizaron correctamente
+    if ($resultado && $resultado_asig_materia && $resultado_calificaciones) {
         return true;
     } else {
         return false;
     }
 }
+
 }
 
 ?>
