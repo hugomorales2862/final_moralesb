@@ -34,7 +34,7 @@ require_once __DIR__ . '../../../modelos/Nacionalidad.php';
                     <thead class="table-dark">
                         <tr>
                             <th>NO. </th>
-                            <th>nacionalidad</th>
+                            <th>NACIONALIDAD</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
@@ -44,9 +44,9 @@ require_once __DIR__ . '../../../modelos/Nacionalidad.php';
                             <?php foreach($resultado as $key => $nacionalidad) : ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $nacionalidad['mat_nombre'] ?></td>
-                                    <td><a class="btn btn-warning w-100" href="../../controladores/nacionalidads/modificar.php $nacionalidad['mat_id']?>">Modificar</a></td>
-                                    <td><a class="btn btn-danger w-100" href="../../controladores/nacionalidads/eliminar.php $nacionalidad['mat_id']?>">Eliminar</a></td>
+                                    <td><?= $nacionalidad['nac_pais'] ?></td>
+                                    <td><a class="btn btn-warning w-100" href="../../controladores/nacionalidades/modificar.php $nacionalidad['nac_id']?>">Modificar</a></td>
+                                    <td><a class="btn btn-danger w-100" href="../../controladores/nacionalidades/eliminar.php $nacionalidad['nac_id']?>">Eliminar</a></td>
                                 </tr>
                             <?php endforeach ?>
                         <?php else :?>
@@ -60,7 +60,7 @@ require_once __DIR__ . '../../../modelos/Nacionalidad.php';
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="../../vistas/nacionalidads/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="../../vistas/nacionalidades/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>

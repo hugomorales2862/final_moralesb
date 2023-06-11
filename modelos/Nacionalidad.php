@@ -1,6 +1,6 @@
 <?php
 require_once 'Conexion.php';
-class Nacionalnacidad extends Conexion{
+class Nacionalidad extends Conexion{
     public $nac_id;
     public $nac_pais;
     public $nac_situacion;
