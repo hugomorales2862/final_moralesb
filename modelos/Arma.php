@@ -1,13 +1,13 @@
 <?php
 require_once 'Conexion.php';
 class Arma extends Conexion{
-    public $ID;
-    public $arm_descripcion;
+    public $arm_id;
+    public $arm_idescripcion;
     public $arm_situacion;
 
     public function __construct($args = [] )
     {
-        $this-> ID = $args ['ID'] ?? NULL;
+        $this-> arm_id = $args ['arm_id'] ?? NULL;
         $this-> arm_descripcion = $args  ['arm_descripcion'] ?? ' '; 
     }
 
@@ -17,7 +17,7 @@ class Arma extends Conexion{
     return $resultado;
    }
 
-
+ 
     public function buscar(){
         $sql =  " SELECT * FROM armas where arm_situacion = 1";
         if($this->arm_descripcion != ' '){
@@ -29,13 +29,13 @@ class Arma extends Conexion{
     }
 
     public function modificar (){
-        $sql = "UPDATE armas SET arm_descripcion = '$this->arm_descripcion' where ID = $this->ID ";
+        $sql = "UPDATE armas SET arm_descripcion = '$this->arm_descripcion' where arm_id = $this->arm_id ";
         $resultado = self::ejecutar($sql);
         return $resultado;    
     }
 
     public function eliminar(){
-        $sql = "UPDATE armas SET arm_situacion = 0 where ID = $this->ID";
+        $sql = "UPDATE armas SET arm_situacion = 0 where arm_id = $this->ID";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
