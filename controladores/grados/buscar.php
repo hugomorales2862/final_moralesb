@@ -45,8 +45,8 @@ try {
                                 <tr>
                                     <td><?= $key + 1 ?></td>
                                     <td><?= $grado['gra_descripcion'] ?></td>
-                                    <td><a class="btn btn-warning w-100" href="/crud_practica9/vistas/clientes/modificar.php?gra_id=<?= $grado['gra_id']?>">Modificar</a></td>
-                                    <td><a class="btn btn-danger w-100" href="/crud_practica9/controladores/clientes/eliminar.php?gra_id=<?= $grado['gra_id']?>">Eliminar</a></td>
+                                    <td><a class="btn btn-warning w-100" href="../../controladores/grados/modificar.php $grado['gra_id']?>">Modificar</a></td>
+                                    <td><a class="btn btn-danger w-100" href="../../controladores/grados/eliminar.php $grado['gra_id']?>">Eliminar</a></td>
                                 </tr>
                             <?php endforeach ?>
                         <?php else :?>
@@ -60,7 +60,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/crud_practica9/vistas/clientes/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="../../vistas/grados/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>
