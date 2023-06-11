@@ -15,10 +15,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="../vistas/grados/index.php">Grados Militares</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/grados/index.php">Grados Militares</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../vistas/grados/buscar.php">Buscar Grado</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/grados/buscar.php">Buscar Grado</a>
                         </li>
                     </ul>
                 </li>

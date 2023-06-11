@@ -3,8 +3,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
-<?php include_once  ' ../../includes/header.php' ?>
-<?php include_once '../../includes/navbar.php' ?>
+<?php include_once __DIR__.'/../../includes/header.php' ?>
+<?php include_once __DIR__. '/../../includes/navbar.php' ?>
 <div class="container">
     <h1 class="text-center">Formulario de ingreso de Grados militares </h1>
     <div class="row justify-content-center">
@@ -24,4 +24,4 @@ error_reporting(E_ALL);
         </form>
     </div>
 </div>
-<?php include_once '../../includes/footer.php' ?>
+<?php include_once __DIR__. '/../../includes/footer.php' ?>

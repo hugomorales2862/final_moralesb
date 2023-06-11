@@ -1,5 +1,8 @@
 <?php
-require '../../modelos/Grado.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+require __DIR__.'/../../modelos/Grado.php';
     try {
         $grado = new Grado($_GET);
 
@@ -11,7 +14,7 @@ require '../../modelos/Grado.php';
         $error = $e2->getMessage();
     }
 ?>
-<?php include_once '../../includes/header.php'?>
+<?php include_once __DIR__.'/../../includes/header.php'?>
     <div class="container">
         <h1 class="text-center">Modificar Grados</h1>
         <div class="row justify-content-center">
@@ -31,4 +34,4 @@ require '../../modelos/Grado.php';
             </form>
         </div>
     </div>
-<?php include_once '../../includes/footer.php'?>
+<?php include_once __DIR__.'/../../includes/footer.php'?>
