@@ -4,11 +4,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once __DIR__ . '../../../modelos/';
+require_once __DIR__ . '../../../modelos/Nacionalidad.php';
 
-try {
-    $materia = new Materia($_GET);
-    $resultado = $materia->buscar();
+ try {
+    $nacionalidad = new Nacionalidad($_GET);
+    $resultado = $nacionalidad->buscar();
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2) {
@@ -34,19 +34,19 @@ try {
                     <thead class="table-dark">
                         <tr>
                             <th>NO. </th>
-                            <th>MATERIA</th>
+                            <th>nacionalidad</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php if(count($resultado) > 0):?>
-                            <?php foreach($resultado as $key => $materia) : ?>
+                            <?php foreach($resultado as $key => $nacionalidad) : ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $materia['mat_nombre'] ?></td>
-                                    <td><a class="btn btn-warning w-100" href="../../controladores/materias/modificar.php $materia['mat_id']?>">Modificar</a></td>
-                                    <td><a class="btn btn-danger w-100" href="../../controladores/materias/eliminar.php $materia['mat_id']?>">Eliminar</a></td>
+                                    <td><?= $nacionalidad['mat_nombre'] ?></td>
+                                    <td><a class="btn btn-warning w-100" href="../../controladores/nacionalidads/modificar.php $nacionalidad['mat_id']?>">Modificar</a></td>
+                                    <td><a class="btn btn-danger w-100" href="../../controladores/nacionalidads/eliminar.php $nacionalidad['mat_id']?>">Eliminar</a></td>
                                 </tr>
                             <?php endforeach ?>
                         <?php else :?>
@@ -60,7 +60,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="../../vistas/materias/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="../../vistas/nacionalidads/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>
