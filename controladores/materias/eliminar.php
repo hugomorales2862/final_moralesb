@@ -4,13 +4,13 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once __DIR__ . '../../../modelos/Grado.php';
+require_once __DIR__ . '../../../modelos/Materia.php';
 
 
     try {
-        $grado = new Grado($_GET);
+        $materia = new Materia($_GET);
  
-        $resultado = $grado->eliminar();
+        $resultado = $materia->eliminar();
 
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -54,7 +54,7 @@ require_once __DIR__ . '../../../modelos/Grado.php';
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/controladores/grados/buscar.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/controladores/materias/buscar.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
