@@ -5,13 +5,17 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/../../modelos/Dmateria.php';
 
+
 if (
     isset($_POST['asig_alumno'], $_POST['asig_materia']) &&
     $_POST['asig_alumno'] != '' && $_POST['asig_materia'] != ''
 ) {
     try {
         $dmateria = new Dmateria($_POST);
+      
         $resultado = $dmateria->guardar();
+  
+      
         $mensaje = "Se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -51,7 +55,7 @@ if (
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/vistas/dmateria/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_moralesb/vistas/dmateria/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

@@ -53,7 +53,7 @@ if (isset($_POST['mat_nombre']) && $_POST['mat_nombre'] != '') {
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/vistas/materias/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_moralesb/vistas/materias/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

@@ -53,7 +53,7 @@ if (isset($_POST['nac_pais']) && $_POST['nac_pais'] != '') {
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/vistas/nacionalidades/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_moralesb/vistas/nacionalidades/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

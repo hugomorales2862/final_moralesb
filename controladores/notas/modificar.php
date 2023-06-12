@@ -1,27 +1,39 @@
 <?php
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once __DIR__ . '../../../modelos/Grado.php';
+require_once __DIR__ .'/../../modelos/Alumno.php';
 
 $resultado = false;
-
-if (isset($_POST['gra_descripcion']) && $_POST['gra_descripcion'] != '') {
+if (
+    isset($_POST['alu_nombre'], $_POST['alu_apellido'], $_POST['alu_grado'], $_POST['alu_arma'], $_POST['alu_nac']) &&
+    $_POST['alu_nombre'] != '' && $_POST['alu_apellido'] != '' && $_POST['alu_grado'] != '' &&
+    $_POST['alu_arma'] != '' && $_POST['alu_nac'] != ''
+) {
 
     try {
-        $grado = new Grado($_POST);
-        $resultado = $grado->guardar();
-        $error = "NO se guardó correctamente";
+        $alumno = new Alumno($_POST);
+        $resultado = $alumno->modificar();
+
+        if ($resultado) {
+            $resultado_asig_materia = $alumno->modificar();
+            $resultado_calificaciones = $alumno->modificar();
+
+            if ($resultado_asig_materia && $resultado_calificaciones) {
+            } else {
+            }
+        } else {
+        }
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2) {
         $error = $e2->getMessage();
     }
 } else {
-    $error = "Debe llenar todos los datos";
+    $error = "Debe llenar al menos un dato ";
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -41,7 +53,7 @@ if (isset($_POST['gra_descripcion']) && $_POST['gra_descripcion'] != '') {
             <div class="col-lg-6">
                 <?php if ($resultado) : ?>
                     <div class="alert alert-success" role="alert">
-                        Guardado exitosamente!
+                        Modificado exitosamente!
                     </div>
                 <?php else : ?>
                     <div class="alert alert-danger" role="alert">
@@ -53,7 +65,7 @@ if (isset($_POST['gra_descripcion']) && $_POST['gra_descripcion'] != '') {
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_moralesb/vistas/grados/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/controladores/alumnos/buscar.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

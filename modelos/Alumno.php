@@ -20,44 +20,27 @@ class Alumno extends Conexion {
         $this-> alu_situacion = $args ['alu_situacion'] ?? ' ';
    }
 
-   public function guardar (){
-    $sql = "INSERT INTO alumnos (alu_nombre,alu_apellido, alu_grado, alu_arma, alu_nac)values ('$this->alu_nombre','$this->alu_apellido', '$this->alu_grado', '$this->alu_arma', '$this->alu_nac')";
-    $resultado =  self::ejecutar($sql);
-    return $resultado;
-   }
+   public function buscar()
+   {
+      
+   $sql =  " SELECT * FROM alumnos WHERE alu_situacion = '1'";
+   if($this->alu_nombre != ' ' && $this->alu_apellido != ''){
+       $sql .= " and alu_nombre like '%$this->alu_nombre%'";
+       }
+       $sql .= " or alu_apellido like '%$this->alu_apellido%'";
+   $resultado = self::servir($sql);
+   return $resultado;
 
+}
 
-   public function buscar() {
-    $sql = "SELECT alumnos.alu_nombre, alumnos.alu_apellido, grados.gra_descripcion AS grado, armas.arm_descripcion AS arma, nacionalidades.nac_pais AS nacionalidad
-            FROM alumnos
-            INNER JOIN grados ON alumnos.alu_grado = grados.gra_id
-            INNER JOIN armas ON alumnos.alu_arma = armas.arm_id
-            INNER JOIN nacionalidades ON alumnos.alu_nac = nacionalidades.nac_id
-            WHERE alumnos.alu_situacion = '1'";
-
-    if ($this->alu_nombre != '') {
-        $sql .= " AND alumnos.alu_nombre LIKE '%$this->alu_nombre%'";
-    }
-
-    if ($this->alu_apellido != '') {
-        $sql .= " AND alumnos.alu_apellido LIKE '%$this->alu_apellido%'";
-    }
-
-    if ($this->alu_grado != '') {
-        $sql .= " AND alumnos.alu_grado = '$this->alu_grado'";
-    }
-
-    if ($this->alu_arma != '') {
-        $sql .= " AND alumnos.alu_arma = '$this->alu_arma'";
-    }
-
-    if ($this->alu_nac != '') {
-        $sql .= " AND alumnos.alu_nac = '$this->alu_nac'";
-    }
-
-    $resultado = self::servir($sql);
+public function guardar()
+{
+    $sql = "INSERT INTO alumnos (alu_nombre,alu_apellido_alu_grado,alu_arma,alu_nac) VALUES ('$this->alu_nombre', '$this->alu_apellido',$this->alu_grado,$this->alu_arma,$this->alu_nac)";
+    $resultado = self::ejecutar($sql);
     return $resultado;
 }
+
+ 
 
 
 public function eliminar() {

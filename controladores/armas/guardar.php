@@ -53,7 +53,7 @@ if (isset($_POST['arm_descripcion']) && $_POST['arm_descripcion'] != '') {
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/vistas/armas/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_moralesb/vistas/armas/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

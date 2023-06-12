@@ -11,7 +11,7 @@ class Dmateria extends Conexion {
     {
         $this->asig_materia = $args['asig_materia'] ?? '';
         $this->asig_alumno = $args['asig_alumno'] ?? '';
-        $this->asig_situacion = $args['asig_situacion'] ?? '';
+        $this->asig_situacion = $args['asig_situacion'] ?? ' ' ;
     }
 
     public function guardar()
@@ -33,7 +33,7 @@ class Dmateria extends Conexion {
         $sql .= " AND materias.mat_nombre LIKE '%$this->asig_materia%'";
     }
   
-    $resultado = self::servir($sql);
+    $resultado = self::ejecutar($sql);
     return $resultado;
 }
 

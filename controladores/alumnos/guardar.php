@@ -1,5 +1,4 @@
 <?php
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -15,9 +14,12 @@ if (
     $_POST['alu_arma'] != '' && $_POST['alu_nac'] != ''
 ) {
     try {
-        $alumno = new  Alumno($_POST);
+        $alumno = new Alumno($_POST);
         $resultado = $alumno->guardar();
-        $error = "NO se guardó correctamente";
+        $mensaje="Guardado exitosamente";
+        if (!$resultado) {
+            $error = "No se pudo guardar correctamente";
+        }
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2) {
@@ -26,8 +28,8 @@ if (
 } else {
     $error = "Debe llenar todos los datos";
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -56,7 +58,7 @@ if (
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_moralesb/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

@@ -11,8 +11,8 @@ error_reporting(E_ALL);
         <form action="../../controladores/grados/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
                 <div class="col">
-                    <label for="gra_descripcion">Grado militar</label>
-                    <input type="text" name="gra_descripcion" id="gra_descripcion" class="form-control">
+                    <label for="GRA_DESCRIPCION">Grado militar</label>
+                    <input type="text" name="GRA_DESCRIPCION" id="GRA_DESCRIPCION" class="form-control">
                 </div>
             </div>
 

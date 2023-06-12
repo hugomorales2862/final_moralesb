@@ -11,6 +11,6 @@
 
         }
     </style>
-    <title>App de Tienda</title>
+    <title>CONTROL DE NOTAS </title>
 </head>
 <body>

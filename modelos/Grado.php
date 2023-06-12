@@ -20,12 +20,24 @@ class Grado extends Conexion{
 
 
     public function buscar(){
-        $sql =  " SELECT * FROM grados where gra_situacion = 1";
-        if($this->gra_descripcion != ' '){
-            $sql .= " and gra_descripcion like '%$this->gra_descripcion%'";
-            }
+     
+        $sql = "SELECT * FROM grados WHERE gra_situacion = 1";
+
+        if ($this->gra_descripcion != '') {
+            $descripcion = strtolower($this->gra_descripcion); 
+            $sql .= " AND LOWER(gra_descripcion) LIKE '%' || LOWER('" . $descripcion . "') || '%'";
+        }
+        
         $resultado = self::servir($sql);
         return $resultado;
+        
+        
+        $resultado = self::ejecutar($sql);
+        return $resultado;
+        
+        
+        
+        
 
     }
 

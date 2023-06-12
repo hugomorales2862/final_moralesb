@@ -3,20 +3,17 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once __DIR__.'/../../modelos/Arma.php';
-require_once __DIR__.'/../../modelos/Grado.php';
-require_once __DIR__.'/../../modelos/Nacionalidad.php';
 require_once __DIR__.'/../../modelos/Alumno.php';
+require_once __DIR__.'/../../modelos/Materia.php';
+require_once __DIR__.'/../../modelos/Dmateria.php';
 
 try {
     $alumno = new Alumno();
-    $arma = new Arma();
-    $grado = new Grado();
-    $nacionalidad = new Nacionalidad();
+    $materia = new Materia();
+    $dmateria = new Dmateria();
     $alumnos = $alumno->buscar();
-    $armas = $arma->buscar();
-    $grados = $grado->buscar();
-    $nacionalidades = $nacionalidad->buscar();
+    $materias = $materia->buscar();
+    $dmaterias = $dmateria->buscar();
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2) {
@@ -27,7 +24,7 @@ try {
 <div class="container">
     <h1 class="text-center">Modificar Alumnos</h1>
     <div class="row justify-content-center">
-        <form action="../../controladores/alumnos/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
+        <form action="../../controladores/dmaterias/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
             <input type="hidden" name="alu_id">
             <div class="row mb-3">
                 <div class="col">

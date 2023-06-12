@@ -46,8 +46,8 @@ try {
                             <?php foreach ($resultado as $key => $dmateria) : ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $dmateria['asig_alumno'] ?></td>
-                                    <td><?= $dmateria['asig_materia'] ?></td>
+                                    <td><?= $dmateria['ASIG_ALUMNO'] ?></td>
+                                    <td><?= $dmateria['ASIG_MATERIA'] ?></td>
                                     <td><a class="btn btn-warning w-100" href="../../controladores/dmaterias/modificar.php?alu_id=<?= $dmateria['asig_materia'],$dmateria['asig_alumno'] ?>">Modificar</a></td>
                                </tr>
                             <?php endforeach ?>

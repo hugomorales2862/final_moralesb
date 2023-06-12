@@ -28,10 +28,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_moralesb/vistas/nacionalidades/index.php">Registrar pais</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/nacionalidades/index.php">Registrar Nacionalidad</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_moralesb/vistas/nacionalidades/buscar.php">Buscar pais</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/nacionalidades/buscar.php">Buscar Nacionalidad</a>
                         </li>
                     </ul>
                 </li>
@@ -44,7 +44,7 @@
                             <a class="nav-link" href="/final_moralesb/vistas/materias/index.php">Registrar materias</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/crud_practica9/vistas/productos/buscar.php">Asignar alumno</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/dmateria/index.php">Asignar alumno</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/final_moralesb/vistas/materias/buscar.php">Buscar materia</a>
@@ -70,13 +70,13 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/crud_practica9/vistas/productos/index.php">Registrar alumnos</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/alumnos/index.php">Registrar alumnos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/crud_practica9/vistas/productos/buscar.php">Notas del alumno</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/alumnos/notas.php>Registrar o modificar notas </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/crud_practica9/vistas/productos/buscar.php">Buscar Alumno</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/alumnos/buscar.php">Buscar Alumno</a>
                         </li>
                     </ul>
                 </li>

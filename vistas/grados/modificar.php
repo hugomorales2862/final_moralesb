@@ -22,8 +22,8 @@ require __DIR__.'../../modelos/Grado.php';
                 <input type="hidden" name="gra_id">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="gra_descripcion">Grado a modificar</label>
-                        <input type="text" name="gra_descripcion" id="gra_descripcion" class="form-control" required>
+                        <label for="GRA_DESCRIPCION">Grado a modificar</label>
+                        <input type="text" name="GRA_DESCRIPCION" id="GRA_DESCRIPCION" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">

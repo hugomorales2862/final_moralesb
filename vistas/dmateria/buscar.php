@@ -39,7 +39,7 @@ require_once __DIR__.'/../../modelos/Dmateria.php';
                         <select name="asig_materia" id="asig_materia" class="form-control">
                             <option value="">SELECCIONE...</option>
                             <?php foreach ($dmaterias as $key => $dmateria) : ?>
-                                <option value="<?= $dmateria['asig_materia'] ?>"><?= $grado['asig_alumno'] ?></option>
+                                <option value="<?= $dmateria['ASIG_MATERIA'] ?>"><?= $grado['ASIG_ALUMNO'] ?></option>
                             <?php endforeach?>
                         </select>
                     </div>

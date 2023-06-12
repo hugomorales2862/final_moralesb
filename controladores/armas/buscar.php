@@ -44,7 +44,7 @@ try {
                             <?php foreach($resultado as $key => $arma) : ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $arma['arm_descripcion'] ?></td>
+                                    <td><?= $arma['ARM_DESCRIPCION'] ?></td>
                                     <td><a class="btn btn-warning w-100" href="../../controladores/armas/modificar.php $arma['arm_id']?>">Modificar</a></td>
                                     <td><a class="btn btn-danger w-100" href="../../controladores/armas/eliminar.php $arma['arm_id']?>">Eliminar</a></td>
                                 </tr>

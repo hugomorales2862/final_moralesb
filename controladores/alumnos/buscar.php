@@ -9,6 +9,15 @@ require_once __DIR__ . '/../../modelos/Alumno.php';
 try {
     $alumno = new Alumno($_GET);
     $resultado = $alumno->buscar();
+    
+
+    $error = null; // Variable para almacenar el error
+
+    if (is_array($resultado) && count($resultado) > 0) {
+        // Procesa los resultados
+    } else {
+        // No se encontraron resultados
+    }
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2) {
@@ -32,11 +41,15 @@ try {
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
+                <?php if ($error) : ?>
+                    <div class="alert alert-danger" role="alert">
+                        Error: <?= $error ?>
+                    </div>
+                <?php endif ?>
                 <table class="table table-bordered table-hover">
                     <thead class="table-dark">
                         <tr>
                             <th>NO. </th>
-                            <th>GRADO</th>
                             <th>NOMBRE DEL ALUMNO</th>
                             <th>APELLIDO DEL ALUMNO</th>
                             <th>DETALLE</th>
@@ -45,14 +58,13 @@ try {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if (count($resultado) > 0) : ?>
+                        <?php if (is_array($resultado) && count($resultado) > 0) : ?>
                             <?php foreach ($resultado as $key => $alumno) : ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $alumno['alu_grado'] ?></td>
-                                    <td><?= $alumno['alu_nombre'] ?></td>
-                                    <td><?= $alumno['alu_apellido'] ?></td>
-                                    <td><a class="btn btn-info w-100" href="../../controladores/alumnos/detalle.php?alu_id=<?= $alumno['alu_id'] ?>">VER DETALLE</a></td>
+                                    <td><?= $alumno['ALU_NOMBRE'] ?></td>
+                                    <td><?= $alumno['ALU_APELLIDO'] ?></td>
+                                    <td><a class="btn btn-info w-100" href="../../controladores/">VER DETALLE</a></td>
                                     <td><a class="btn btn-warning w-100" href="../../controladores/alumnos/modificar.php?alu_id=<?= $alumno['alu_id'] ?>">Modificar</a></td>
                                     <td><a class="btn btn-danger w-100" href="../../controladores/alumnos/eliminar.php?alu_id=<?= $alumno['alu_id'] ?>">Eliminar</a></td>
                                 </tr>

@@ -15,11 +15,8 @@ try {
     $alumnos = $alumno->buscar();
     $materias = $materia->buscar();
     $dmaterias = $dmateria->buscar();
-    //  echo var_dump($alumnos);
-    //  echo var_dump($materias);
-    //  echo var_dump($dmaterias);
-    //  exit;
-
+  
+        
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2) {
@@ -32,14 +29,14 @@ try {
 <div class="container">
     <h1 class="text-center">Formulario de asignacion de alumnos a materias </h1>
     <div class="row justify-content-center">
-        <form action="/crud_practica9/controladores/ventas/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
+        <form action="/final_moralesb/controladores/dmaterias/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
                 <div class="col">
                     <label for="asig_alumno">ALUMNO</label>
                     <select name="asig_alumno" id="asig_alumno" class="form-control">
                         <option value="">SELECCIONE...</option>
-                        <?php foreach ($dmaterias as $key => $dmateria) : ?>
-                            <option value="<?= $dmateria['asig_materia'] ?>"></option>
+                        <?php foreach ($alumnos as $key => $alumno) : ?>
+                            <option value="<?= $alumno['ALU_ID'] ?>"><?= $alumno['ALU_NOMBRE'] ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>
@@ -49,8 +46,8 @@ try {
                     <label for="asig_materia">MATERIA</label>
                     <select name="asig_materia" id="asig_materia" class="form-control">
                         <option value="">SELECCIONE...</option>
-                        <?php foreach ($dmateria as $key => $admateria) : ?>
-                            <option value="<?= $admateria['asig_materia'] ?>"></option>
+                        <?php foreach ($materias as $key => $materia) : ?>
+                            <option value="<?= $materia['MAT_ID'] ?>"><?= $materia['MAT_NOMBRE'] ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>

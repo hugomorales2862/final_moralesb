@@ -4,11 +4,13 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once __DIR__ . '../../../modelos/Grado.php';
+require_once __DIR__ . '/../../modelos/Grado.php';
 
 try {
     $grado = new Grado($_GET);
+    // var_dump($grado);
     $resultado = $grado->buscar();
+   
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2) {
@@ -40,20 +42,20 @@ try {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(count($resultado) > 0):?>
-                            <?php foreach($resultado as $key => $grado) : ?>
+                        <?php if (count($resultado) > 0): ?>
+                            <?php foreach ($resultado as $key => $grado) : ?> 
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $grado['gra_descripcion'] ?></td>
-                                    <td><a class="btn btn-warning w-100" href="../../controladores/grados/modificar.php $grado['gra_id']?>">Modificar</a></td>
-                                    <td><a class="btn btn-danger w-100" href="../../controladores/grados/eliminar.php $grado['gra_id']?>">Eliminar</a></td>
+                                    <td><?= $grado['GRA_DESCRIPCION'] ?></td>
+                                    <td><a class="btn btn-warning w-100" href="../../controladores/grados/modificar.php ? echo $grado['GRA_ID']?>">Modificar</a></td>
+                                    <td><a class="btn btn-danger w-100" href="../../controladores/grados/eliminar.php $grado['GRA_ID']?>">Eliminar</a></td>
                                 </tr>
                             <?php endforeach ?>
-                        <?php else :?>
+                        <?php else: ?>
                             <tr>
                                 <td colspan="4">NO EXISTEN REGISTROS</td>
                             </tr>
-                        <?php endif?>
+                        <?php endif ?>
                     </tbody>
                 </table>
             </div>
@@ -66,3 +68,4 @@ try {
     </div>
 </body>
 </html>
+

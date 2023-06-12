@@ -44,7 +44,7 @@ try {
                             <?php foreach($resultado as $key => $materia) : ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $materia['mat_nombre'] ?></td>
+                                    <td><?= $materia['MAT_NOMBRE'] ?></td>
                                     <td><a class="btn btn-warning w-100" href="../../controladores/materias/modificar.php $materia['mat_id']?>">Modificar</a></td>
                                     <td><a class="btn btn-danger w-100" href="../../controladores/materias/eliminar.php $materia['mat_id']?>">Eliminar</a></td>
                                 </tr>
