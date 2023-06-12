@@ -33,7 +33,7 @@ require '../../modelos/Materia.php';
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_cornelio/controladores/materias/buscar.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_moralesb/controladores/materias/buscar.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

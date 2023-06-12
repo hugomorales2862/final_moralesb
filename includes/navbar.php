@@ -4,10 +4,10 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="/final_cornelio/">Escuela de Informatica</a>
+            <a class="navbar-brand" href="/final_cornelio/">CONTROL DE NOTAS</a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/final_cornelio/">Inicio</a>
+                    <a class="nav-link active" aria-current="page" href="/final_moralesb/">Inicio</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -15,10 +15,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/calificaciones/index.php">iNGRESAR CALIFICACIONES</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/calificaciones/index.php">iNGRESAR CALIFICACIONES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/calificaciones/buscar.php">BUSCAR CALIFICACIONES</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/calificaciones/buscar.php">BUSCAR CALIFICACIONES</a>
                         </li>
                     </ul>
                 </li>
@@ -28,10 +28,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/materias/index.php">INGRESAR MATERIAS</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/materias/index.php">INGRESAR MATERIAS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/materias/buscar.php">BUSCAR MATERIAS</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/materias/buscar.php">BUSCAR MATERIAS</a>
                         </li>
                     </ul>
                 </li>
@@ -41,10 +41,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/alumnos/index.php">REGISTRAR ALUMNOS</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/alumnos/index.php">REGISTRAR ALUMNOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/alumnos/buscar.php">BUSCAR ALUMNOS</a>
+                            <a class="nav-link" href="/final_moralesb/vistas/alumnos/buscar.php">BUSCAR ALUMNOS</a>
                         </li>
                     </ul>
                 </li>
