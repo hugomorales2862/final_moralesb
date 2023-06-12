@@ -1,6 +1,6 @@
 <?php
-require_once '../../modelos/Calificaciones.php';
-require_once '../../modelos/RelacionMatAlum.php';
+require_once '../../modelos/Calificacion.php';
+require_once '../../modelos/Matalum.php';
 
 function nota_literal($nota){
     if($nota >= 70){

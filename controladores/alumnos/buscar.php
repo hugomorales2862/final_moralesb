@@ -1,5 +1,5 @@
 <?php
-require '../../modelos/Alumnos.php';
+require '../../modelos/Alumno.php';
 try {
 
     if(isset($_GET['alu_nombre']) && $_GET['alu_nombre'] != ''){

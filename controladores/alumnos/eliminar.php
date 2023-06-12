@@ -1,6 +1,6 @@
 <?php
-require '../../modelos/Alumnos.php';
-require '../../modelos/RelacionMatAlum.php';
+require '../../modelos/Alumno.php';
+require '../../modelos/Matalum.php';
 
 try {
 

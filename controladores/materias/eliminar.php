@@ -1,5 +1,5 @@
 <?php
-require '../../modelos/Materias.php';
+require '../../modelos/Materia.php';
 
 
     try {

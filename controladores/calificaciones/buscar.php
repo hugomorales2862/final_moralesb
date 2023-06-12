@@ -1,6 +1,6 @@
 <?php
-require_once '../../modelos/Calificaciones.php';
-require_once '../../modelos/Alumnos.php';
+require_once '../../modelos/Calificacion.php';
+require_once '../../modelos/Alumno.php';
 try {
 
     if(isset($_GET['calif_alumno']) && $_GET['calif_alumno'] != ''){
