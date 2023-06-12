@@ -4,7 +4,7 @@
     <div class="container mt-5">
         <h1 class="text-center">Ingreso de materias</h1>
         <div class="row justify-content-center">
-            <form action="/final_cornelio/controladores/materias/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
+            <form action="/final_moralesb/controladores/materias/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="ma_nombre">Ingrese el nombre del materias</label>

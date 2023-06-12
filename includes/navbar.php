@@ -15,10 +15,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/calificaciones/index.php">Ingresar calificaciones</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/calificaciones/index.php">iNGRESAR CALIFICACIONES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/calificaciones/buscar.php">Buscar calificaciones</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/calificaciones/buscar.php">BUSCAR CALIFICACIONES</a>
                         </li>
                     </ul>
                 </li>
@@ -28,10 +28,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/materias/index.php">Crear Materia</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/materias/index.php">INGRESAR MATERIAS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/materias/buscar.php">Buscar Materia</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/materias/buscar.php">BUSCAR MATERIAS</a>
                         </li>
                     </ul>
                 </li>
@@ -41,10 +41,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/alumnos/index.php">Crear Alumnos</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/alumnos/index.php">REGISTRAR ALUMNOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_cornelio/vistas/alumnos/buscar.php">Buscar Alumnos</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/alumnos/buscar.php">BUSCAR ALUMNOS</a>
                         </li>
                     </ul>
                 </li>

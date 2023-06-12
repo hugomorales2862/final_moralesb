@@ -20,7 +20,7 @@ try {
 <div class="container mt-5">
     <h1 class="text-center">Formulario de ingreso de calificaciones</h1>
     <div class="row justify-content-center">
-        <form action="/final_cornelio/controladores/calificaciones/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
+        <form action="/final_moralesb/controladores/calificaciones/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
                 <div class="col">
                     <label for="calif_alumno">Alumno</label>
