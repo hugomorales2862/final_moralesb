@@ -4,11 +4,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once __DIR__ . '/../../modelos/Alumno.php';
+require_once __DIR__ . '/../../modelos/Dmateria.php';
 
 try {
-    $alumno = new Alumno($_GET);
-    $resultado = $alumno->buscar();
+    $dmateria = new Dmateria($_GET);
+    $resultado = $dmateria->buscar();
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2) {
@@ -36,26 +36,20 @@ try {
                     <thead class="table-dark">
                         <tr>
                             <th>NO. </th>
-                            <th>GRADO</th>
-                            <th>NOMBRE DEL ALUMNO</th>
-                            <th>APELLIDO DEL ALUMNO</th>
-                            <th>DETALLE</th>
+                            <th>ALUMNO</th>
+                            <th>MATERIA</th>
                             <th>MODIFICAR</th>
-                            <th>ELIMINAR</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php if (count($resultado) > 0) : ?>
-                            <?php foreach ($resultado as $key => $alumno) : ?>
+                            <?php foreach ($resultado as $key => $dmateria) : ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $alumno['alu_grado'] ?></td>
-                                    <td><?= $alumno['alu_nombre'] ?></td>
-                                    <td><?= $alumno['alu_apellido'] ?></td>
-                                    <td><a class="btn btn-info w-100" href="../../controladores/alumnos/detalle.php?alu_id=<?= $alumno['alu_id'] ?>">VER DETALLE</a></td>
-                                    <td><a class="btn btn-warning w-100" href="../../controladores/alumnos/modificar.php?alu_id=<?= $alumno['alu_id'] ?>">Modificar</a></td>
-                                    <td><a class="btn btn-danger w-100" href="../../controladores/alumnos/eliminar.php?alu_id=<?= $alumno['alu_id'] ?>">Eliminar</a></td>
-                                </tr>
+                                    <td><?= $dmateria['asig_alumno'] ?></td>
+                                    <td><?= $dmateria['asig_materia'] ?></td>
+                                    <td><a class="btn btn-warning w-100" href="../../controladores/dmaterias/modificar.php?alu_id=<?= $dmateria['asig_materia'],$dmateria['asig_alumno'] ?>">Modificar</a></td>
+                               </tr>
                             <?php endforeach ?>
                         <?php else : ?>
                             <tr>
@@ -68,7 +62,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="../../vistas/alumnos/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="../../vistas/dmaterias/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>
