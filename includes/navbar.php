@@ -4,83 +4,50 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="#">Control de Notas</a>
+            <a class="navbar-brand" href="/final_cornelio/">Escuela de Informatica</a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    <a class="nav-link active" aria-current="page" href="/final_cornelio/">Inicio</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        GRADO
+                        Calificaciones
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_moralesb/vistas/grados/index.php">Grados Militares</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/calificaciones/index.php">Ingresar calificaciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_moralesb/vistas/grados/buscar.php">Buscar Grado</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/calificaciones/buscar.php">Buscar calificaciones</a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        NACIONALIDAD
+                    Materias
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_moralesb/vistas/nacionalidades/index.php">Registrar Nacionalidad</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/materias/index.php">Crear Materia</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_moralesb/vistas/nacionalidades/buscar.php">Buscar Nacionalidad</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/materias/buscar.php">Buscar Materia</a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        MATERIAS
+                        Alumnos
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_moralesb/vistas/materias/index.php">Registrar materias</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/alumnos/index.php">Crear Alumnos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_moralesb/vistas/dmateria/index.php">Asignar alumno</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/final_moralesb/vistas/materias/buscar.php">Buscar materia</a>
+                            <a class="nav-link" href="/final_cornelio/vistas/alumnos/buscar.php">Buscar Alumnos</a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        ARMAS
-                    </a>
-                    <ul class="dropdown-menu bg-dark">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/final_moralesb/vistas/armas/index.php">Registro Arma/servicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/final_moralesb/vistas/armas/buscar.php">Buscar Arma/servicio</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        ALUMNOS
-                    </a>
-                    <ul class="dropdown-menu bg-dark">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/final_moralesb/vistas/alumnos/index.php">Registrar alumnos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/final_moralesb/vistas/alumnos/notas.php>Registrar o modificar notas </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/final_moralesb/vistas/alumnos/buscar.php">Buscar Alumno</a>
-                        </li>
-                    </ul>
-                </li>
-
             </ul>
         </div>
     </div>

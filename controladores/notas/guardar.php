@@ -1,23 +1,25 @@
 <?php
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once __DIR__ . '/../../modelos/Alumno.php';
+require_once __DIR__ . '/../../modelos/Dmateria.php';
 
 $resultado = false;
 $error = '';
 
+
 if (
-    isset($_POST['alu_nombre'], $_POST['alu_apellido'], $_POST['alu_grado'], $_POST['alu_arma'], $_POST['alu_nac']) &&
-    $_POST['alu_nombre'] != '' && $_POST['alu_apellido'] != '' && $_POST['alu_grado'] != '' &&
-    $_POST['alu_arma'] != '' && $_POST['alu_nac'] != ''
+    isset($_POST['asig_materia'], $_POST['asig_alumno'] ) &&
+    $_POST['asig_materia'] != '' && $_POST['asig_alumno'] != ''
 ) {
     try {
-        $alumno = new  Alumno($_POST);
-        $resultado = $alumno->guardar();
-        $error = "NO se guardó correctamente";
+        $dmateria = new Dmateria($_POST);
+        $resultado = $dmateria->guardar();
+        $mensaje="Guardado exitosamente";
+        if (!$resultado) {
+            $error = "No se pudo guardar correctamente";
+        }
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2) {
@@ -26,8 +28,8 @@ if (
 } else {
     $error = "Debe llenar todos los datos";
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -56,7 +58,7 @@ if (
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_moralesb/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

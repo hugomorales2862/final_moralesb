@@ -45,8 +45,8 @@ try {
                                 <tr>
                                     <td><?= $key + 1 ?></td>
                                     <td><?= $arma['ARM_DESCRIPCION'] ?></td>
-                                    <td><a class="btn btn-warning w-100" href="../../controladores/armas/modificar.php $arma['arm_id']?>">Modificar</a></td>
-                                    <td><a class="btn btn-danger w-100" href="../../controladores/armas/eliminar.php $arma['arm_id']?>">Eliminar</a></td>
+                                    <td><a class="btn btn-warning w-100" href="/final_moralesb/vistas/armas/modificar.php?arm_id<?= $arma['ARM_ID']?>">Modificar</a></td>
+                                    <td><a class="btn btn-danger w-100" href="/final_moralesb/controladores/armas/eliminar.php?arm_id<?= $arma['ARMA_ID']?>">Eliminar</a></td>
                                 </tr>
                             <?php endforeach ?>
                         <?php else :?>

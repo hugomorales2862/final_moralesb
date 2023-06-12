@@ -42,7 +42,7 @@ try {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if (count($resultado) > 0): ?>
+                    <?php if (is_array($resultado) && count($resultado) > 0) : ?>
                             <?php foreach ($resultado as $key => $grado) : ?> 
                                 <tr>
                                     <td><?= $key + 1 ?></td>

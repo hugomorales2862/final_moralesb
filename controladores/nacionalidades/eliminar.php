@@ -5,12 +5,13 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once __DIR__ . '../../../modelos/Nacionalidad.php';
-
+// var_dump($_GET);
 
     try {
         $nacionalidad = new Nacionalidad($_GET);
  
         $resultado = $nacionalidad->eliminar();
+      
 
     } catch (PDOException $e) {
         $error = $e->getMessage();

@@ -1,12 +1,11 @@
 <?php
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once __DIR__ . '../../../modelos/Nacionalidad.php';
-var_dump($_GET);
- try {
+
+try {
     $nacionalidad = new Nacionalidad($_GET);
     $resultado = $nacionalidad->buscar();
 } catch (PDOException $e) {
@@ -14,8 +13,8 @@ var_dump($_GET);
 } catch (Exception $e2) {
     $error = $e2->getMessage();
 }
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -40,13 +39,15 @@ var_dump($_GET);
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(count($resultado) > 0):?>
+                    <?php if (is_array($resultado) && count($resultado) > 0) : ?>
                             <?php foreach($resultado as $key => $nacionalidad) : ?>
                                 <tr>
+                                    
                                     <td><?= $key + 1 ?></td>
                                     <td><?= $nacionalidad['NAC_PAIS'] ?></td>
-                                    <td><a class="btn btn-warning w-100" href="../../controladores/nacionalidades/modificar.php $nacionalidad['nac_id']?>">Modificar</a></td>
-                                    <td><a class="btn btn-danger w-100" href="../../controladores/nacionalidades/eliminar.php $nacionalidad['nac_id']?>">Eliminar</a></td>
+                                    <td><a class="btn btn-warning w-100" href="/final_moralesb/vistas/armas/modificar.php?nac_id<?=$nacionalidad['NAC_ID']?>">Modificar</a></td>
+                                    <td><a class="btn btn-danger w-100" href="/final_moralesb/controladores/armas/eliminar.php?nac_id<?=$nacionalidad['NAC_ID']?>">Eliminar</a></td>
+               
                                 </tr>
                             <?php endforeach ?>
                         <?php else :?>
@@ -60,7 +61,7 @@ var_dump($_GET);
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="../../vistas/nacionalidades/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="/final_moralesb/vistas/nacionalidades/index.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>

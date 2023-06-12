@@ -7,15 +7,19 @@ error_reporting(E_ALL);
 require_once __DIR__ . '/../../modelos/Alumno.php';
 require_once __DIR__ . '/../../modelos/Materia.php';
 require_once __DIR__ . '/../../modelos/Dmateria.php';
+require_once __DIR__ . '/../../modelos/Notas.php';
+
 
 try {
     $alumno = new Alumno();
     $materia = new Materia();
     $dmateria = new Dmateria();
+    $nota = new Nota();
     $alumnos = $alumno->buscar();
     $materias = $materia->buscar();
     $dmaterias = $dmateria->buscar();
-  
+    $resultado = $nota->guardar();
+ 
         
 } catch (PDOException $e) {
     $error = $e->getMessage();

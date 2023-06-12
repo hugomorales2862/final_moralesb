@@ -1,71 +1,73 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+require '../../modelos/Alumnos.php';
+require '../../modelos/RelacionMatAlum.php';
 
-require_once __DIR__ . '/../../modelos/Alumno.php';
-$resultado = false;
-$error = '';
+try {
 
-if (
-    isset($_POST['alu_id']) &&
-    $_POST['alu_id'] != ''
-) {
-    try {
-        $alumno = new Alumno($_POST);
-        $resultado = $alumno->eliminar();
+    if (isset($_GET['id_alumnos'])) {
+        // Crear una instancia de la clase Alumno con el ID del alumno a eliminar
+        $alumno = new Alumno(['id_alumnos' => $_GET['id_alumnos']]);
 
-        if ($resultado) {
-            $resultado_materia = $alumno->eliminar();
-            $resultado_calif = $alumno->eliminar();
+        // Eliminar el alumno
+        if($alumno->eliminar()){
 
-            if ($resultado_materia && $resultado_calif) {
-                $mensaje = '¡Eliminado exitosamente!';
-            } else {
-                $error = 'Error al eliminar materia o calificaciones.';
-            }
-        } else {
-            $error = 'Error al eliminar el alumno.';
+            $resultado = true;
+
+        }else{
+            $resultado = false;
+            throw new Exception("Error al eliminar el alumno");
         }
-    } catch (PDOException $e) {
-        $error = $e->getMessage();
-    } catch (Exception $e2) {
-        $error = $e2->getMessage();
+
+        // Crear una instancia de la clase RelacionMatAlum con el ID del alumno a eliminar
+        $relacion = new RelacionMatAlum(['ma_alumno' => $_GET['id_alumnos']]);
+
+        // Eliminar las relaciones entre el alumno y las materias
+        if($relacion->eliminar()){
+
+            $resultado = true;
+            
+        }else{
+            
+            $resultado = false;
+            throw new Exception("Error al eliminar las relaciones entre el alumno y las mater");
+            
+        }
+
+    } else {
+        $resultado = false;
+        $error .= "ID de alumno no proporcionado";
     }
-} else {
-    $error = 'Debe proporcionar el ID del alumno.';
+
+}catch (PDOException $ex){
+    $error .= $ex->getMessage();
+
+}catch (Exception $e2) {
+    $error .= $e2->getMessage();
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>Resultados</title>
-</head>
-<body>
-    <div class="container">
+<?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?>
+
+    <div class="container mt-5">
         <div class="row">
             <div class="col-lg-6">
                 <?php if($resultado): ?>
                     <div class="alert alert-success" role="alert">
-                        <?= $mensaje ?>
+                        Alumno eliminado exitosamente!
                     </div>
                 <?php else :?>
                     <div class="alert alert-danger" role="alert">
                         Ocurrió un error: <?= $error ?>
                     </div>
                 <?php endif ?>
+              
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/controladores/alumnos/buscar.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_cornelio/controladores/alumnos/buscar.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
-</body>
-</html>
+    <?php include_once '../../includes/footer.php'?>

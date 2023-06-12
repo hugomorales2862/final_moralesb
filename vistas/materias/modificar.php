@@ -1,29 +1,30 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-require __DIR__.'/../../modelos/Materia.php';
+require '../../modelos/Materias.php';
     try {
-        $materia = new Materia($_GET);
+        if(isset($_GET['id_materias']) && $_GET['id_materias'] != ''){
 
-        $resultado = $materia->buscar();
-       
+            $id_materia = $_GET['id_materias'];
+            $materia = new Materia(["id_materias" => $id_materia]);
+            $materias = $materia->buscar();
+        }
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
         $error = $e2->getMessage();
     }
 ?>
-<?php include_once __DIR__.'/../../includes/header.php'?>
-    <div class="container">
-        <h1 class="text-center">Modificar materias</h1>
+<?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Modificar Materias</h1>
         <div class="row justify-content-center">
-            <form action="../../controladores/materias/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
-                <input type="hidden" name="mat_id">
+            <form action="/final_cornelio/controladores/materias/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
+                <input type="hidden" name="id_materias" value="<?= $materias[0]['ID_MATERIAS'] ?>" >
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="mat_nombre">materia a modificar</label>
-                        <input type="text" name="mat_nombre" id="mat_nombre" class="form-control" required>
+                        <label for="ma_nombre">Nombre del materia</label>
+                        <input type="text" name="ma_nombre" id="ma_nombre" class="form-control" value="<?= $materias[0]['MA_NOMBRE'] ?>">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -34,4 +35,4 @@ require __DIR__.'/../../modelos/Materia.php';
             </form>
         </div>
     </div>
-<?php include_once __DIR__.'/../../includes/footer.php'?>
+<?php include_once '../../includes/footer.php'?>
