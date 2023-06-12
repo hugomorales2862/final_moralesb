@@ -61,26 +61,32 @@ class Alumno extends Conexion {
 
 
 public function eliminar() {
+
     $sql = "UPDATE alumnos 
             SET alu_situacion = '0' 
             WHERE alu_id = $this->alu_id";
 
     $resultado = self::ejecutar($sql);
 
-    // Eliminar registros correspondientes en la tabla asig_materia
-    $sql = "UPDATE asig_materia 
+        $sql = "UPDATE asig_materia 
             SET asig_situacion = '0' 
             WHERE asig_alumno = $this->alu_id";
 
-    $resultado_asig_materia = self::ejecutar($sql);
+    $resultado_materia = self::ejecutar($sql);
 
-    // Comprobar si ambas operaciones se realizaron correctamente
-    if ($resultado && $resultado_asig_materia) {
+    $sql = "DELETE FROM calificaciones 
+            WHERE calif_alumno = $this->alu_id";
+
+    $resultado_calif = self::ejecutar($sql);
+
+    
+    if ($resultado && $resultado_materia && $resultado_calif) {
         return true;
     } else {
         return false;
     }
 }
+
 public function modificar() {
     // Modificar registro en la tabla alumnos
     $sql = "UPDATE alumnos 
