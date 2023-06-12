@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once __DIR__ . '../../../modelos/Nacionalidad.php';
-
+var_dump()
  try {
     $nacionalidad = new Nacionalidad($_GET);
     $resultado = $nacionalidad->buscar();
@@ -44,7 +44,7 @@ require_once __DIR__ . '../../../modelos/Nacionalidad.php';
                             <?php foreach($resultado as $key => $nacionalidad) : ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $nacionalidad['nac_pais'] ?></td>
+                                    <td><?= $nacionalidad['NAC_PAIS'] ?></td>
                                     <td><a class="btn btn-warning w-100" href="../../controladores/nacionalidades/modificar.php $nacionalidad['nac_id']?>">Modificar</a></td>
                                     <td><a class="btn btn-danger w-100" href="../../controladores/nacionalidades/eliminar.php $nacionalidad['nac_id']?>">Eliminar</a></td>
                                 </tr>

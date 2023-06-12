@@ -58,3 +58,4 @@ CREATE TABLE calificaciones (
   FOREIGN KEY (calif_alumno, calif_materia) REFERENCES asig_materia(asig_alumno, asig_materia)
 );
 
+notice undefined index: gra_descripcion in /var/www/html/final_moralesb/visatas/alumnos/index.php
