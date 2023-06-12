@@ -31,7 +31,7 @@ if (
         $error = $e2->getMessage();
     }
 } else {
-    $error = "Debe llenar todos los datos";
+    $error = "Debe llenar al menos un dato";
 }
 
 

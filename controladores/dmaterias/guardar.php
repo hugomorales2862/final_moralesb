@@ -4,15 +4,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once __DIR__ . '/../../modelos/Alumno.php';
+require_once __DIR__ . '/../../modelos/Dmateria.php';
 
 $resultado = false;
 $error = '';
 
 if (
-    isset($_POST['alu_nombre'], $_POST['alu_apellido'], $_POST['alu_grado'], $_POST['alu_arma'], $_POST['alu_nac']) &&
-    $_POST['alu_nombre'] != '' && $_POST['alu_apellido'] != '' && $_POST['alu_grado'] != '' &&
-    $_POST['alu_arma'] != '' && $_POST['alu_nac'] != ''
+    isset($_POST['asig_alumno'], $_POST['asig_materia'],) &&
+    $_POST['asig_alumno'] != '' && $_POST['asig_materia'] != ''
 ) {
     try {
         $alumno = new Alumno($_POST);
@@ -36,7 +35,7 @@ if (
         $error = $e2->getMessage();
     }
 } else {
-    $error = 'Debe llenar todos los datos';
+    $error = 'Debe llenar los datos ';
 }
 
 ?>
