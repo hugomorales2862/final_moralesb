@@ -67,7 +67,7 @@ if (
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/vistas/dmateria/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
