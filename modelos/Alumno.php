@@ -87,14 +87,15 @@ public function eliminar() {
     }
 }
 
-public function modificar() {
+public function modificar()
+{
     // Modificar registro en la tabla alumnos
     $sql = "UPDATE alumnos 
-            SET alu_nombre = '$this->alu_nombre', 
-                alu_apellido = '$this->alu_apellido', 
-                alu_grado = '$this->alu_grado', 
-                alu_arma = '$this->alu_arma', 
-                alu_nac = '$this->alu_nac' 
+            SET alu_nombre = COALESCE('$this->alu_nombre', alu_nombre), 
+                alu_apellido = COALESCE('$this->alu_apellido', alu_apellido), 
+                alu_grado = COALESCE('$this->alu_grado', alu_grado), 
+                alu_arma = COALESCE('$this->alu_arma', alu_arma), 
+                alu_nac = COALESCE('$this->alu_nac', alu_nac)
             WHERE alu_id = $this->alu_id";
 
     $resultado = self::ejecutar($sql);
@@ -120,6 +121,7 @@ public function modificar() {
         return false;
     }
 }
+
 
 }
 

@@ -44,17 +44,39 @@ class Dmateria extends Conexion {
     public function modificar()
     {
         $sql = "UPDATE asig_materia 
-                SET asig_alumno = $this->asig_alumno, asig_materia=$this->asig_materia
-                WHERE asig_alumno = $this->asig_alumno, asig_materia=$this->asig_materia";
-
+                SET ";
+    
+        if ($this->asig_alumno != '') {
+            $sql .= "asig_alumno = '$this->asig_alumno', ";
+        }
+    
+        if ($this->asig_materia != '') {
+            $sql .= "asig_materia = '$this->asig_materia', ";
+        }
+  
+        $sql = rtrim($sql, ', ') . " 
+                WHERE asig_alumno = '$this->asig_alumno' 
+                AND asig_materia = '$this->asig_materia'";
+    
         $resultado = self::ejecutar($sql);
-
+    
         $sql = "UPDATE calificaciones 
-                SET calif_alumno = $this->asig_alumno, calif_materia = $this->asig_materia
-                WHERE calif_alumno = $this->asig_alumno, calif_materia = $this->asig_materia";
-
+                SET ";
+    
+        if ($this->asig_alumno != '') {
+            $sql .= "calif_alumno = '$this->asig_alumno', ";
+        }
+    
+        if ($this->asig_materia != '') {
+            $sql .= "calif_materia = '$this->asig_materia', ";
+        }
+    
+        $sql = rtrim($sql, ', ') . " 
+                WHERE calif_alumno = '$this->asig_alumno' 
+                AND calif_materia = '$this->asig_materia'";
+    
         $resultado_calif = self::ejecutar($sql);
-
+    
         if ($resultado && $resultado_calif) {
             return true;
         } else {
@@ -62,4 +84,5 @@ class Dmateria extends Conexion {
         }
     }
 }
+    
 ?>
