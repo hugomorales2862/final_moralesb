@@ -35,7 +35,7 @@ require_once __DIR__.'/../../modelos/Dmateria.php';
             <form action="/final_moralesb/controladores/dmateria/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
                 <div class="col">
-                    <label for="alu_nombre">materia</label>
+                    <label for="alu_nombre">MATERIA</label>
                     <input type="text" name="alu_nombre" id="alu_nombre" class="form-control required">
                 </div>
                 <div class="row mb-3">
