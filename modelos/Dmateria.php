@@ -22,24 +22,21 @@ class Dmateria extends Conexion {
     }
 
     public function buscar()
-    {
-        $sql = "SELECT asig_materia.asig_materia, asig_materia.asig_alumno
-                FROM asig_materia
-                INNER JOIN alumnos ON asig_materia.asig_alumno = alumnos.alu_id
-                INNER JOIN materias ON asig_materia.asig_materia = materias.mat_id
-                WHERE asig_materia.asig_situacion = '1'";
+{
+    $sql = "SELECT alumnos.alu_nombre
+            FROM asig_materia
+            INNER JOIN alumnos ON asig_materia.asig_alumno = alumnos.alu_id
+            INNER JOIN materias ON asig_materia.asig_materia = materias.mat_id
+            WHERE asig_materia.asig_situacion = '1'";
 
-        if ($this->asig_materia != '') {
-            $sql .= " AND materias.mat_nombre LIKE '%$this->asig_materia%'";
-        }
-
-        if ($this->asig_alumno != '') {
-            $sql .= " AND alumnos.alu_nombre LIKE '%$this->asig_alumno%'";
-        }
-      
-        $resultado = self::servir($sql);
-        return $resultado;
+    if ($this->asig_materia != '') {
+        $sql .= " AND materias.mat_nombre LIKE '%$this->asig_materia%'";
     }
+  
+    $resultado = self::servir($sql);
+    return $resultado;
+}
+
 
     public function modificar()
     {
