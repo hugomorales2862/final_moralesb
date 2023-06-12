@@ -1,41 +1,25 @@
 <?php
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once __DIR__ . '/../../modelos/Dmateria.php';
 
-$resultado = false;
-$error = '';
-
 if (
-    isset($_POST['asig_alumno'], $_POST['asig_materia'],) &&
+    isset($_POST['asig_alumno'], $_POST['asig_materia']) &&
     $_POST['asig_alumno'] != '' && $_POST['asig_materia'] != ''
 ) {
     try {
-        $alumno = new Alumno($_POST);
-        $resultado = $alumno->guardar();
-
-        if ($resultado) {
-            $resultado_asig_materia = $alumno->guardar();
-            $resultado_calificaciones = $alumno->guardar();
-
-            if ($resultado_asig_materia && $resultado_calificaciones) {
-                $mensaje = '¡Guardado exitosamente!';
-            } else {
-                $error = 'Error al guardar la asignación de materia o calificaciones.';
-            }
-        } else {
-            $error = 'Error al guardar el alumno.';
-        }
+        $dmateria = new Dmateria($_POST);
+        $resultado = $dmateria->guardar();
+        $mensaje = "Se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2) {
         $error = $e2->getMessage();
     }
 } else {
-    $error = 'Debe llenar los datos ';
+    $error = "Debe llenar todos los datos";
 }
 
 ?>
@@ -54,7 +38,7 @@ if (
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <?php if ($resultado) : ?>
+                <?php if (isset($resultado) && $resultado) : ?>
                     <div class="alert alert-success" role="alert">
                         <?= $mensaje ?>
                     </div>

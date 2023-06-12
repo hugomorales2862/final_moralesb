@@ -15,28 +15,16 @@ if (
     $_POST['alu_arma'] != '' && $_POST['alu_nac'] != ''
 ) {
     try {
-        $alumno = new Alumno($_POST);
+        $alumno = new  Alumno($_POST);
         $resultado = $alumno->guardar();
-
-        if ($resultado) {
-            $resultado_asig_materia = $alumno->guardar();
-            $resultado_calificaciones = $alumno->guardar();
-
-            if ($resultado_asig_materia && $resultado_calificaciones) {
-                $mensaje = '¡Guardado exitosamente!';
-            } else {
-                $error = 'Error al guardar la asignación de materia o calificaciones.';
-            }
-        } else {
-            $error = 'Error al guardar el alumno.';
-        }
+        $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2) {
         $error = $e2->getMessage();
     }
 } else {
-    $error = 'Debe llenar todos los datos';
+    $error = "Debe llenar todos los datos";
 }
 
 ?>

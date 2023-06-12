@@ -32,11 +32,17 @@ require_once __DIR__.'/../../modelos/Dmateria.php';
 <div class="container">
         <h1 class="text-center">Busqueda de materia con su alumno asignado</h1>
         <div class="row justify-content-center">
-            <form action="/final_moralesb/controladores/dmateria/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
+            <form action="/final_moralesb/controladores/dmaterias/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
-                <div class="col">
-                    <label for="alu_nombre">MATERIA</label>
-                    <input type="text" name="alu_nombre" id="alu_nombre" class="form-control required">
+                    <div class="col">
+                        <label for="asig_materia">MATERIA</label>
+                        <select name="asig_materia" id="asig_materia" class="form-control">
+                            <option value="">SELECCIONE...</option>
+                            <?php foreach ($dmaterias as $key => $dmateria) : ?>
+                                <option value="<?= $dmateria['asig_materia'] ?>"><?= $grado['asig_alumno'] ?></option>
+                            <?php endforeach?>
+                        </select>
+                    </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
