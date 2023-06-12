@@ -1,5 +1,5 @@
 <?php
-require '../../modelos/Alumnos.php';
+require '../../modelos/Alumno.php';
     try {
         $alumno = new Alumno($_GET);
 

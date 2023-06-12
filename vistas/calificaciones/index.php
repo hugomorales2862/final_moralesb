@@ -1,6 +1,6 @@
 <?php
-require_once '../../modelos/Alumnos.php';
-require_once '../../modelos/Materias.php';
+require_once '../../modelos/Alumno.php';
+require_once '../../modelos/Materia.php';
 
 try {
     $alumno = new Alumno();

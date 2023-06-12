@@ -1,5 +1,5 @@
 <?php
-require '../../modelos/Materias.php';
+require '../../modelos/Materia.php';
     try {
         if(isset($_GET['id_materias']) && $_GET['id_materias'] != ''){
 

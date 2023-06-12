@@ -1,5 +1,5 @@
 <?php
-require '../../modelos/Alumnos.php';
+require '../../modelos/Alumno.php';
 
 
 if($_POST['id_alumnos'] != '' && $_POST['alu_nombre'] != '' && $_POST['alu_apellido'] != '' && $_POST['alu_grado'] != '' && $_POST['alu_arma'] != '' && $_POST['alu_nac'] != ''){

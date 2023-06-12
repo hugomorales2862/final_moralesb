@@ -42,24 +42,3 @@ CREATE TABLE relacion_mat_alum(
 );
 
 
-INSERT INTO relacion_mat_alum (ma_alumno, ma_materia) VALUES (1, 1);
-
-INSERT INTO relacion_mat_alum (ma_alumno, ma_materia) VALUES (2, 2);
-
-INSERT INTO relacion_mat_alum (ma_alumno, ma_materia) VALUES (1, 2);
-
-
-
-/*querys*/
-
-SELECT alumnos.alu_nombre|| ' ' ||alu_apellido as Nombre, alumnos.alu_grado, alumnos.alu_arma, alumnos.alu_nac,  materias.ma_nombre, calificaciones.calif_punteo, calificaciones.calif_resultado
-FROM alumnos
-JOIN calificaciones ON alumnos.id_alumnos = calificaciones.calif_alumno
-JOIN materias ON calificaciones.calif_materia = materias.id_materias
-ORDER BY alumnos.alu_nombre, materias.ma_nombre, calificaciones.id_calificaciones;
-
-
-SELECT alumnos.alu_nombre|| ' ' ||alu_apellido as Nombre, AVG(calificaciones.calif_punteo) AS Promedio
-FROM alumnos
-JOIN calificaciones ON alumnos.id_alumnos = calificaciones.calif_alumno
-GROUP BY alumnos.alu_nombre;
